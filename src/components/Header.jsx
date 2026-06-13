@@ -22,7 +22,7 @@ export default function Header({ data, theme, onToggleTheme }) {
         <span className="brand-mark">{data.avatarText}</span>
         <span>
           <strong>{data.name}</strong>
-          <small>Nhân viên TMĐT</small>
+          <small>Justin Nguyễn • E-commerce Executive</small>
         </span>
       </a>
 
