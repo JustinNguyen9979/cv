@@ -22,17 +22,9 @@ export const cvData = {
   ],
   socials: [
     {
-      label: 'LinkedIn',
-      url: 'https://www.linkedin.com/',
-    },
-    {
-      label: 'GitHub',
-      url: 'https://github.com/',
-    },
-    {
-      label: 'Portfolio',
-      url: 'https://example.com/',
-    },
+      label: 'Facebook',
+      url: 'https://www.facebook.com/NguyenNguyen77779999/',
+    }
   ],
   stats: [
     { value: '3+', label: 'Lĩnh vực vận hành' },
@@ -92,6 +84,8 @@ export const cvData = {
         'Workflow Automation',
         'Google Sheets',
         'Tự động hóa tác vụ lặp lại',
+        'Hermes Agent / OpenClaw',
+        'Google Flow',
       ],
     },
     {
@@ -158,44 +152,52 @@ export const cvData = {
   ],
   projects: [
     {
-      name: 'E-commerce Product Content System',
-      type: 'Content & Marketplace Optimization',
+      name: 'YTDown',
+      type: 'Desktop Content Utility',
       description:
-        'Xây dựng bộ quy trình viết nội dung sản phẩm gồm tiêu đề, mô tả, lợi ích, keyword, hướng dẫn sử dụng và nội dung đăng bán phù hợp với từng nền tảng.',
-      stack: ['Shopee SEO', 'Product Content', 'Keyword Research', 'Customer Insight'],
+        'Ứng dụng desktop hỗ trợ tải và quản lý video từ nhiều nền tảng social như TikTok, Facebook, Instagram, YouTube Shorts và Xiaohongshu, phục vụ quá trình nghiên cứu nội dung, lưu trữ tư liệu và sản xuất content marketing.',
+      stack: ['Go', 'JavaScript', 'TypeScript', 'Shell', 'HTML', 'CSS', 'macOS'],
+      url: 'https://github.com/JustinNguyen9979/YTDown',
+    },
+    {
+      name: 'Business Analytics',
+      type: 'E-commerce Data Dashboard',
+      description:
+        'Web dashboard đang phát triển nhằm phân tích dữ liệu kinh doanh từ TikTok Shop và Shopee thông qua file Excel, giúp chủ shop theo dõi doanh thu, lợi nhuận, đơn hàng, chi phí sàn, hoàn/hủy, sản phẩm bán chạy, lịch sử mua hàng và vòng đời khách hàng.',
+      stack: ['ReactJS', 'FastAPI', 'PostgreSQL', 'Python', 'Chart.js', 'Recharts'],
       url: '#',
     },
     {
-      name: 'AI Product Visual Direction Workflow',
-      type: 'AI-assisted Marketing',
+      name: 'Social & Ads Management Module',
+      type: 'Marketing Operations Tool',
       description:
-        'Thiết kế quy trình lên ý tưởng hình ảnh sản phẩm bằng AI, hỗ trợ tạo concept chụp ảnh, bối cảnh, ánh sáng, bố cục và phong cách phù hợp với mục tiêu bán hàng.',
-      stack: ['AI Prompt', 'Visual Direction', 'Product Branding', 'Content Planning'],
+        'Module định hướng mở rộng trong Business Analytics, hỗ trợ quản lý bài đăng Facebook trên nhiều page, theo dõi chiến dịch quảng cáo trên nhiều tài khoản quảng cáo, đăng bài và lên lịch đăng hàng loạt cho các page.',
+      stack: ['Facebook Pages', 'Ads Management', 'Scheduling', 'Content Operations'],
       url: '#',
     },
     {
-      name: 'Social Media Content Planning',
-      type: 'Digital Marketing',
+      name: 'TikTok Shop Fashion Growth Case',
+      type: 'E-commerce Growth Case',
       description:
-        'Xây dựng định hướng nội dung cho các kênh mạng xã hội, bao gồm bài giới thiệu sản phẩm, nội dung ngắn, caption bán hàng và ý tưởng video.',
-      stack: ['Social Content', 'Content Calendar', 'Copywriting', 'Trend Research'],
+        'Dự án hợp tác vận hành shop thời trang trên TikTok từ con số 0, triển khai hình ảnh sản phẩm, video ngắn, livestream, affiliate, voucher, flash sale, tối ưu giá bán và chi phí vận hành; duy trì doanh thu hơn 300 triệu đồng/tháng mà không sử dụng TikTok Ads.',
+      stack: ['TikTok Shop', 'Livestream', 'Affiliate', 'Organic Traffic', 'Shop Operations'],
       url: '#',
     },
     {
-      name: 'Customer Support Chatbot Flow',
-      type: 'Automation Support',
+      name: 'Honeyland Marketplace Operations',
+      type: 'TikTok Shop & Shopee Operations',
       description:
-        'Nghiên cứu quy trình chatbot hỗ trợ tư vấn khách hàng, trả lời câu hỏi thường gặp, thu thập thông tin đơn hàng và giảm thao tác thủ công trong chăm sóc khách hàng.',
-      stack: ['Chatbot Flow', 'Customer Support', 'Automation', 'FAQ System'],
+        'Dự án vận hành gian hàng TikTok Shop và Shopee cho Công ty Cổ phần Ong Mật Tiền Giang Honeyland, tập trung vào đăng sản phẩm, tối ưu SEO, hình ảnh, mô tả, giá bán, voucher, campaign, xử lý đơn hàng và chăm sóc khách hàng.',
+      stack: ['TikTok Shop', 'Shopee', 'Product SEO', 'Marketplace Operations', 'CSKH'],
       url: '#',
     },
   ],
   education: [
     {
-      name: 'Self-learning / Practical Working Experience',
-      period: 'Liên tục',
+      name: 'Practical Learning in E-commerce & Digital Marketing',
+      period: '2019 — Nay',
       description:
-        'Tự học và phát triển kỹ năng thông qua công việc thực tế trong thương mại điện tử, digital marketing, xây dựng nội dung, vận hành bán hàng online và ứng dụng AI vào quy trình làm việc.',
+        'Liên tục nâng cấp kỹ năng thông qua công việc thực tế trong Facebook Ads, TikTok Shop, Shopee, tối ưu nội dung sản phẩm, vận hành sàn thương mại điện tử và ứng dụng AI vào quy trình marketing.',
     },
   ],
 };

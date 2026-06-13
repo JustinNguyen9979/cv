@@ -7,14 +7,14 @@ export default function Contact({ data }) {
       <SectionTitle
         eyebrow="06 / Contact"
         title="Liên hệ"
-        description="Sẵn sàng trao đổi về các vị trí thương mại điện tử, digital marketing, content sản phẩm hoặc vận hành bán hàng online."
+        description="Sẵn sàng trao đổi về các vị trí E-commerce Executive, TikTok Shop/Shopee Operator, Digital Marketing hoặc Content sản phẩm."
       />
 
       <div className="contact-card glass-panel">
         <div>
           <h3>Sẵn sàng kết nối?</h3>
           <p>
-            Nếu cần một người có tư duy vận hành, hiểu AI automation và biết biến ý tưởng thành quy trình chạy được.
+            Có kinh nghiệm thực chiến trong vận hành TikTok Shop, Shopee, tối ưu sản phẩm, nội dung bán hàng và chăm sóc khách hàng.
           </p>
         </div>
 
