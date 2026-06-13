@@ -821,30 +821,257 @@
   }
 }
 
+/* Ngoài màn hình thường, ẩn layout in đi */
+.print-cv-container {
+  display: none;
+}
+
 @media print {
-  .site-header,
-  .floating-grid,
-  .hero-actions,
-  .scan-line,
-  .orb {
-    display: none !important;
+  *, *:before, *:after {
+    box-sizing: border-box !important;
   }
 
+  /* Thiết lập khổ giấy A4 và margin */
+  @page {
+    size: A4;
+    margin: 1.2cm;
+  }
+
+  /* Reset body khi in */
   body {
     background: white !important;
     color: #111827 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .section-padding {
-    width: 100%;
-    padding: 24px 0;
+  /* Ẩn hoàn toàn tất cả các thành phần web */
+  .site-header,
+  .floating-grid,
+  .hero,
+  .content-section,
+  .scan-line,
+  .orb,
+  footer {
+    display: none !important;
   }
 
-  .glass-panel,
-  .project-card,
-  .hero-card {
-    box-shadow: none !important;
-    background: white !important;
-    border-color: #d7dce6 !important;
+  /* Hiển thị layout in */
+  .print-cv-container {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Cấu trúc Header in */
+  .print-header {
+    border-bottom: 2px solid #1f2937;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .print-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .print-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #d1d5db;
+  }
+
+  .print-header-main h1 {
+    font-size: 22pt;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #111827;
+  }
+
+  .print-subtitle {
+    font-size: 11pt;
+    font-weight: 500;
+    color: #4b5563;
+    margin: 0;
+  }
+
+  .print-contact-info {
+    text-align: right;
+    font-size: 8.5pt;
+    color: #374151;
+    max-width: 45%;
+    word-break: break-all;
+  }
+
+  .print-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+
+  .print-contact-item svg {
+    color: #4b5563;
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Body chia 2 cột */
+  .print-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  /* Cột chính chiếm 60%, cột phụ chiếm 36% */
+  .print-col-main {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .print-col-sidebar {
+    flex: 0 0 36%;
+    max-width: 36%;
+    border-left: 1px solid #e5e7eb;
+    padding-left: 16px;
+  }
+
+  /* Định dạng Section */
+  .print-section {
+    margin-bottom: 16px;
+  }
+
+  .print-section-title {
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 3px;
+    margin: 0 0 8px 0;
+    color: #111827;
+  }
+
+  .print-section-content {
+    font-size: 9pt;
+    color: #374151;
+  }
+
+  .print-section-content p {
+    margin: 0 0 6px 0;
+    text-align: justify;
+  }
+
+  /* Kinh nghiệm */
+  .print-exp-item {
+    margin-bottom: 12px;
+  }
+
+  .print-exp-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .print-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .print-item-header h3,
+  .print-item-header h4 {
+    font-size: 10pt;
+    font-weight: 700;
+    margin: 0;
+    color: #111827;
+  }
+
+  .print-item-period {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: #6b7280;
+    white-space: nowrap;
+  }
+
+  .print-item-company {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 3px;
+  }
+
+  .print-item-desc {
+    margin: 0 0 4px 0;
+    font-style: italic;
+    color: #4b5563;
+    font-size: 8.5pt;
+  }
+
+  .print-item-highlights {
+    margin: 0;
+    padding-left: 14px;
+  }
+
+  .print-item-highlights li {
+    margin-bottom: 2px;
+    line-height: 1.35;
+  }
+
+  /* Dự án */
+  .print-proj-item {
+    margin-bottom: 10px;
+  }
+
+  .print-item-type {
+    font-size: 8pt;
+    font-weight: 500;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .print-item-tech {
+    font-size: 8pt;
+    margin-top: 3px;
+    color: #4b5563;
+  }
+
+  /* Kỹ năng */
+  .print-skill-group {
+    margin-bottom: 10px;
+  }
+
+  .print-skill-group h4 {
+    font-size: 9.5pt;
+    font-weight: 700;
+    margin: 0 0 3px 0;
+    color: #1f2937;
+  }
+
+  .print-skill-list {
+    margin: 0;
+    padding-left: 12px;
+  }
+
+  .print-skill-list li {
+    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+
+  /* Học vấn */
+  .print-edu-item {
+    margin-bottom: 8px;
   }
 }

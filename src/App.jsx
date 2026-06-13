@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import FloatingGrid from './components/FloatingGrid';
+import PrintCV from './components/PrintCV';
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
@@ -24,6 +25,7 @@ export default function App() {
       <Projects data={cvData.projects} />
       <Education data={cvData.education} />
       <Contact data={cvData} />
+      <PrintCV data={cvData} />
     </main>
   );
 }

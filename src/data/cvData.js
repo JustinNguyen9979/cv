@@ -3,7 +3,7 @@ export const cvData = {
   nickname: 'Justin Nguyễn',
   avatarUrl: '/avatar.jpeg', 
   jobTitle: 'E-commerce Executive • Digital Marketing • AI Automation',
-  location: 'Việt Nam',
+  location: '52 Trần Quốc Toản, Dĩ An, TP.HCM',
   email: 'duchuy_1997@hotmail.com',
   phone: '+84 982 579 098',
   avatarText: 'JN',
@@ -196,7 +196,13 @@ export const cvData = {
   ],
   education: [
     {
-      name: 'Practical Learning in E-commerce & Digital Marketing',
+      name: 'Đại học Công Nghiệp TP. Hồ Chí Minh',
+      period: '2015 — 2019',
+      description:
+        'Ngành Điện tử - Viễn thông. Đã tốt nghiệp. Quá trình học giúp xây dựng nền tảng tư duy kỹ thuật, khả năng phân tích hệ thống, xử lý vấn đề và tiếp cận công nghệ mới.',
+    },
+    {
+      name: 'Tự học & phát triển chuyên môn',
       period: '2019 — Nay',
       description:
         'Liên tục nâng cấp kỹ năng thông qua công việc thực tế trong Facebook Ads, TikTok Shop, Shopee, tối ưu nội dung sản phẩm, vận hành sàn thương mại điện tử và ứng dụng AI vào quy trình marketing.',
