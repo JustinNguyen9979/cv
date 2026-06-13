@@ -4,6 +4,27 @@ import AnimatedText from './AnimatedText';
 
 export default function Hero({ data }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    setTouchStart({ x: touch.clientX, y: touch.clientY, time: Date.now() });
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!touchStart) return;
+    const touch = e.changedTouches[0];
+    const distX = touch.clientX - touchStart.x;
+    const distY = touch.clientY - touchStart.y;
+    const elapsed = Date.now() - touchStart.time;
+
+    // Kiểm tra nếu di chuyển ngón tay cực ít (< 8px) và thời gian chạm ngắn (< 300ms) thì coi là tap
+    if (Math.abs(distX) < 8 && Math.abs(distY) < 8 && elapsed < 300) {
+      e.preventDefault(); // Ngăn sự kiện click giả lập gây double-flip
+      setIsFlipped((prev) => !prev);
+    }
+    setTouchStart(null);
+  };
 
   return (
     <section id="top" className="hero section-padding">
@@ -47,6 +68,8 @@ export default function Hero({ data }) {
         className="hero-card-wrapper reveal-deep-space"
         role="button"
         tabIndex={0}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         onClick={() => setIsFlipped(!isFlipped)}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
