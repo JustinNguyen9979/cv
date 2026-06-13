@@ -4,7 +4,8 @@
     padding-top: 56px;
   }
 
-  .hero-card {
+  .hero-card,
+  .hero-card-wrapper {
     max-width: 560px;
     margin-inline: auto;
   }
