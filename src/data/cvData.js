@@ -2,8 +2,8 @@ export const cvData = {
   name: 'Justin Nguyễn',
   jobTitle: 'E-commerce Operator • AI Automation Builder • Digital Creator',
   location: 'Việt Nam',
-  email: 'duchuy_1997@protonmail.com',
-  phone: '+84 xxx xxx xxx',
+  email: 'duchuy_1997@hotmail.com',
+  phone: '+84 982 579 098',
   avatarText: 'JN',
   shortIntro:
     'Mình xây dựng hệ thống bán hàng, nội dung số và các workflow tự động hoá bằng AI để biến ý tưởng thành sản phẩm chạy được thật.',

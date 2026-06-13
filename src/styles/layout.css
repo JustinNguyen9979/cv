@@ -95,7 +95,7 @@
 .brand small {
   color: var(--muted);
   font-size: 0.78rem;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .nav-list {
