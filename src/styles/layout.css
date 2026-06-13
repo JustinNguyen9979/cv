@@ -922,6 +922,7 @@
 .education-card h3,
 .contact-card h3 {
   margin: 14px 0 8px;
+  color: var(--primary);
 }
 
 .feature-card p,
