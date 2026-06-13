@@ -177,6 +177,10 @@ svg {
   line-height: 1;
 }
 
+.section-title h2 .glitch-text {
+  display: inline-block;
+}
+
 .section-title p {
   margin: 14px 0 0;
   color: var(--muted);
