@@ -1,5 +1,6 @@
 export const cvData = {
-  name: 'Justin Nguyễn',
+  name: 'Nguyễn Đức Huy',
+  nickname: 'Justin Nguyễn',
   jobTitle: 'E-commerce Executive • Digital Marketing • AI Automation',
   location: 'Việt Nam',
   email: 'duchuy_1997@hotmail.com',

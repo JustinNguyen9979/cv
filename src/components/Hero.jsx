@@ -11,7 +11,7 @@ export default function Hero({ data }) {
         </div>
 
         <h1>
-          {data.name}
+          <span className="glitch-text">{data.nickname}</span>
           <span className="gradient-text">{data.jobTitle}</span>
         </h1>
 
