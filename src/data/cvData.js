@@ -1,6 +1,7 @@
 export const cvData = {
   name: 'Nguyễn Đức Huy',
   nickname: 'Justin Nguyễn',
+  avatarUrl: '', // Đường dẫn ảnh đại diện (VD: '/avatar.jpg' đặt trong thư mục public, hoặc link ảnh online)
   jobTitle: 'E-commerce Executive • Digital Marketing • AI Automation',
   location: 'Việt Nam',
   email: 'duchuy_1997@hotmail.com',

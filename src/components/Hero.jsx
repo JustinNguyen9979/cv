@@ -42,7 +42,13 @@ export default function Hero({ data }) {
 
       <aside className="hero-card" aria-label="Thông tin nhanh">
         <div className="avatar-ring">
-          <div className="avatar-core">{data.avatarText}</div>
+          <div className="avatar-core">
+            {data.avatarUrl ? (
+              <img src={data.avatarUrl} alt={data.name} className="avatar-img" />
+            ) : (
+              data.avatarText
+            )}
+          </div>
         </div>
 
         <div className="profile-card-body">
