@@ -7,7 +7,7 @@ export default function Hero({ data }) {
       <div className="hero-content">
         <div className="status-pill">
           <Sparkles size={16} />
-          <span>Available for AI-powered digital projects</span>
+          <span>Sẵn sàng cho vị trí E-commerce & Digital Marketing</span>
         </div>
 
         <h1>
@@ -41,6 +41,7 @@ export default function Hero({ data }) {
       </div>
 
       <aside className="hero-card" aria-label="Thông tin nhanh">
+        <div className="hero-card-border" />
         <div className="avatar-ring">
           <div className="avatar-core">
             {data.avatarUrl ? (

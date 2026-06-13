@@ -388,14 +388,28 @@
 .hero-card {
   position: relative;
   padding: 26px;
-  border: 1px solid var(--line);
+  border: none;
   border-radius: var(--radius-xl);
   background:
     linear-gradient(135deg, rgba(110, 231, 255, 0.16), transparent 42%),
     linear-gradient(160deg, var(--surface-strong), rgba(255, 255, 255, 0.04));
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.7),
+    0 45px 90px -20px rgba(0, 0, 0, 0.85),
+    0 0 60px -10px rgba(66, 133, 244, 0.35),
+    0 0 80px -20px rgba(234, 67, 53, 0.25);
   overflow: hidden;
   backdrop-filter: blur(22px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.75),
+    0 60px 120px -25px rgba(0, 0, 0, 0.9),
+    0 0 80px -5px rgba(66, 133, 244, 0.5),
+    0 0 100px -10px rgba(234, 67, 53, 0.35);
 }
 
 .hero-card::before {
@@ -405,6 +419,39 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 26px;
   pointer-events: none;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.hero-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  padding: 3px; /* Độ dày của viền gradient */
+  background: conic-gradient(from var(--angle), #4285F4, #EA4335, #FBBC05, #34A853, #4285F4);
+  animation: rotate-gradient-angle 6s linear infinite;
+  pointer-events: none;
+  z-index: 3; /* Đảm bảo viền nằm trên cùng đè lên mép card */
+  
+  /* Đục lỗ phần ruột ở giữa để màu gradient chỉ hiển thị ở phần viền 3px, tránh bị xuyên thấu qua nền kính mờ */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes rotate-gradient-angle {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
 }
 
 .avatar-ring {
