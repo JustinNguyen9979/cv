@@ -10,8 +10,12 @@ export default function Experience({ data }) {
       />
 
       <div className="timeline">
-        {data.map((item) => (
-          <article className="timeline-item" key={`${item.role}-${item.company}`}>
+        {data.map((item, idx) => (
+          <article 
+            className="timeline-item reveal-wing-right" 
+            key={`${item.role}-${item.company}`}
+            style={{ '--delay': `${idx * 0.15}s` }}
+          >
             <div className="timeline-dot" />
             <div className="glass-panel timeline-card">
               <div className="timeline-head">

@@ -10,8 +10,12 @@ export default function Education({ data }) {
       />
 
       <div className="education-list">
-        {data.map((item) => (
-          <article className="glass-panel education-card" key={item.name}>
+        {data.map((item, idx) => (
+          <article 
+            className="glass-panel education-card reveal-wing-left" 
+            key={item.name}
+            style={{ '--delay': `${idx * 0.15}s` }}
+          >
             <span>{item.period}</span>
             <h3>{item.name}</h3>
             <p>{item.description}</p>

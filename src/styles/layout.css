@@ -871,6 +871,84 @@
   }
 }
 
+/* ==========================================================================
+   SCROLL REVEAL 3D ANIMATIONS
+   ========================================================================== */
+
+/* 1. Deep Space Rise (Bay từ chiều sâu trục Z) */
+.reveal-deep-space {
+  opacity: 0;
+  transform: perspective(1200px) translate3d(0, 80px, -350px) rotateX(25deg);
+  filter: blur(12px);
+  transition: 
+    opacity 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
+    transform 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
+    filter 1.2s cubic-bezier(0.25, 1.4, 0.5, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: transform, opacity, filter;
+}
+
+.reveal-deep-space.is-visible {
+  opacity: 1;
+  transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg);
+  filter: blur(0);
+}
+
+/* 2. 3D Card Flip (Lật bài 3D) */
+.reveal-card-flip {
+  opacity: 0;
+  transform: perspective(1000px) scale(0.8) rotateY(-90deg);
+  transition: 
+    opacity 1.0s cubic-bezier(0.25, 1.4, 0.5, 1),
+    transform 1.0s cubic-bezier(0.25, 1.4, 0.5, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+.reveal-card-flip.is-visible {
+  opacity: 1;
+  transform: perspective(1000px) scale(1) rotateY(0deg);
+}
+
+/* 3. 3D Wing Slide (Khép cánh 3D từ hai phía) */
+/* Cánh trái */
+.reveal-wing-left {
+  opacity: 0;
+  transform: perspective(1200px) translate3d(-150px, 0, 0) rotateY(35deg) rotate(-5deg);
+  filter: blur(6px);
+  transition: 
+    opacity 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
+    transform 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
+    filter 1.2s cubic-bezier(0.25, 1.4, 0.5, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: transform, opacity, filter;
+}
+
+.reveal-wing-left.is-visible {
+  opacity: 1;
+  transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
+  filter: blur(0);
+}
+
+/* Cánh phải */
+.reveal-wing-right {
+  opacity: 0;
+  transform: perspective(1200px) translate3d(150px, 0, 0) rotateY(-35deg) rotate(5deg);
+  filter: blur(6px);
+  transition: 
+    opacity 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
+    transform 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
+    filter 1.2s cubic-bezier(0.25, 1.4, 0.5, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: transform, opacity, filter;
+}
+
+.reveal-wing-right.is-visible {
+  opacity: 1;
+  transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
+  filter: blur(0);
+}
+
 /* Ngoài màn hình thường, ẩn layout in đi */
 .print-cv-container {
   display: none;

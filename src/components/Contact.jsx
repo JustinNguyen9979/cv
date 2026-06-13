@@ -10,7 +10,7 @@ export default function Contact({ data }) {
         description="Sẵn sàng trao đổi về các vị trí E-commerce Executive, TikTok Shop/Shopee Operator, Digital Marketing hoặc Content sản phẩm."
       />
 
-      <div className="contact-card glass-panel">
+      <div className="contact-card glass-panel reveal-deep-space">
         <div>
           <h3>Sẵn sàng kết nối?</h3>
           <p>

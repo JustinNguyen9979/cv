@@ -10,8 +10,12 @@ export default function Skills({ data }) {
       />
 
       <div className="skills-grid">
-        {data.map((group) => (
-          <article className="glass-panel skill-card" key={group.group}>
+        {data.map((group, idx) => (
+          <article 
+            className="glass-panel skill-card reveal-card-flip" 
+            key={group.group}
+            style={{ '--delay': `${idx * 0.15}s` }}
+          >
             <h3>{group.group}</h3>
             <div className="skill-list">
               {group.items.map((skill) => (

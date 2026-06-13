@@ -11,23 +11,33 @@ export default function Projects({ data }) {
       />
 
       <div className="project-grid">
-        {data.map((project) => (
-          <article className="project-card" key={project.name}>
-            <div className="project-topline">
-              <span>{project.type}</span>
-              <a href={project.url} aria-label={`Xem ${project.name}`}>
-                <ExternalLink size={18} />
-              </a>
-            </div>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <div className="project-stack">
-              {project.stack.map((tech) => (
-                <span key={tech}>{tech}</span>
-              ))}
-            </div>
-          </article>
-        ))}
+        {data.map((project, idx) => {
+          let revealClass = 'reveal-deep-space';
+          if (idx % 3 === 0) revealClass = 'reveal-wing-left';
+          else if (idx % 3 === 2) revealClass = 'reveal-wing-right';
+
+          return (
+            <article 
+              className={`project-card ${revealClass}`} 
+              key={project.name}
+              style={{ '--delay': `${(idx % 3) * 0.15}s` }}
+            >
+              <div className="project-topline">
+                <span>{project.type}</span>
+                <a href={project.url} aria-label={`Xem ${project.name}`}>
+                  <ExternalLink size={18} />
+                </a>
+              </div>
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+              <div className="project-stack">
+                {project.stack.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

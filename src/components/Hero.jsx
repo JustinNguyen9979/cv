@@ -40,7 +40,7 @@ export default function Hero({ data }) {
         </div>
       </div>
 
-      <aside className="hero-card" aria-label="Thông tin nhanh">
+      <aside className="hero-card reveal-deep-space" aria-label="Thông tin nhanh">
         <div className="hero-card-border" />
         <div className="avatar-ring">
           <div className="avatar-core">

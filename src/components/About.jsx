@@ -29,17 +29,21 @@ export default function About({ data }) {
       />
 
       <div className="about-grid">
-        <div className="glass-panel about-copy">
+        <div className="glass-panel about-copy reveal-wing-left">
           {data.about.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
         <div className="feature-grid">
-          {cards.map((card) => {
+          {cards.map((card, idx) => {
             const Icon = card.icon;
             return (
-              <article className="feature-card" key={card.title}>
+              <article 
+                className="feature-card reveal-wing-right" 
+                key={card.title}
+                style={{ '--delay': `${idx * 0.15}s` }}
+              >
                 <Icon size={22} />
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
