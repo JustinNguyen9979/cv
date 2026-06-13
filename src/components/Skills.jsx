@@ -6,7 +6,7 @@ export default function Skills({ data }) {
       <SectionTitle
         eyebrow="02 / Skills"
         title="Kỹ năng"
-        description="Chia theo nhóm để sau này anh muốn thêm/bớt chỉ cần sửa file dữ liệu CV."
+        description="Nhóm kỹ năng phục vụ trực tiếp cho vận hành gian hàng, digital marketing, tối ưu nội dung sản phẩm và cải thiện hiệu quả bán hàng online."
       />
 
       <div className="skills-grid">

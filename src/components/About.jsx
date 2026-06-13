@@ -1,21 +1,21 @@
-import { Cpu, Rocket, ShieldCheck } from 'lucide-react';
+import { Store, PenLine, TrendingUp } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 
 const cards = [
   {
-    icon: Cpu,
-    title: 'Tư duy hệ thống',
-    description: 'Nhìn vấn đề theo luồng dữ liệu, điểm nghẽn và khả năng tự động hoá.',
+    icon: Store,
+    title: 'Tư duy vận hành',
+    description: 'Hiểu luồng bán hàng online từ sản phẩm, nội dung, gian hàng đến đơn hàng và chăm sóc khách hàng.',
   },
   {
-    icon: Rocket,
-    title: 'Tốc độ triển khai',
-    description: 'Ưu tiên giải pháp rõ ràng, dễ kiểm thử, dễ nâng cấp khi dự án lớn hơn.',
+    icon: PenLine,
+    title: 'Tối ưu nội dung',
+    description: 'Xây dựng tiêu đề, mô tả, hình ảnh và thông điệp giúp sản phẩm dễ hiểu, dễ tìm và dễ mua hơn.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Ý thức bảo mật',
-    description: 'Không hardcode dữ liệu nhạy cảm, không leak lỗi nội bộ, luôn nghĩ đến rủi ro.',
+    icon: TrendingUp,
+    title: 'Tư duy tăng trưởng',
+    description: 'Theo dõi thị trường, đối thủ và phản hồi khách hàng để liên tục cải thiện hiệu quả bán hàng online.',
   },
 ];
 
@@ -25,7 +25,7 @@ export default function About({ data }) {
       <SectionTitle
         eyebrow="01 / About"
         title="Giới thiệu"
-        description="Một CV không chỉ để đọc, mà còn phải tạo cảm giác chuyên nghiệp ngay từ cú chạm đầu tiên."
+        description="Tổng quan về định hướng công việc, thế mạnh cá nhân và cách tôi kết hợp thương mại điện tử, nội dung và AI trong vận hành thực tế."
       />
 
       <div className="about-grid">

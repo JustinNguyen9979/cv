@@ -7,15 +7,14 @@ export default function Contact({ data }) {
       <SectionTitle
         eyebrow="06 / Contact"
         title="Liên hệ"
-        description="Khu vực CTA cuối trang, dùng để điều hướng nhà tuyển dụng hoặc khách hàng tiềm năng."
+        description="Sẵn sàng trao đổi về các vị trí thương mại điện tử, digital marketing, content sản phẩm hoặc vận hành bán hàng online."
       />
 
       <div className="contact-card glass-panel">
         <div>
           <h3>Sẵn sàng kết nối?</h3>
           <p>
-            Nếu cần một người có tư duy vận hành, hiểu AI automation và biết biến ý tưởng thành quy trình chạy được,
-            đây là khu vực bấm nút. Không màu mè, nhưng có điện.
+            Nếu cần một người có tư duy vận hành, hiểu AI automation và biết biến ý tưởng thành quy trình chạy được.
           </p>
         </div>
 

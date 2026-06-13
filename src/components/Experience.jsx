@@ -6,7 +6,7 @@ export default function Experience({ data }) {
       <SectionTitle
         eyebrow="03 / Experience"
         title="Kinh nghiệm"
-        description="Timeline dạng card công nghệ, nhìn gọn nhưng vẫn đủ thông tin quan trọng."
+        description="Kinh nghiệm làm việc xoay quanh vận hành gian hàng, phát triển nội dung sản phẩm, nghiên cứu thị trường và tối ưu hiệu quả bán hàng online."
       />
 
       <div className="timeline">

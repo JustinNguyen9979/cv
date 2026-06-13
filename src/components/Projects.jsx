@@ -7,7 +7,7 @@ export default function Projects({ data }) {
       <SectionTitle
         eyebrow="04 / Projects"
         title="Dự án nổi bật"
-        description="Các project được trình bày như dashboard mini, hợp vibe AI/digital hơn CV truyền thống."
+        description="Một số dự án và quy trình thực tế liên quan đến nội dung sản phẩm, tối ưu marketplace, social media và ứng dụng AI trong marketing."
       />
 
       <div className="project-grid">

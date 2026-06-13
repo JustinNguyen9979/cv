@@ -6,7 +6,7 @@ export default function Education({ data }) {
       <SectionTitle
         eyebrow="05 / Learning"
         title="Học tập & phát triển"
-        description="CV kiểu mới nên show được cả năng lực tự học và khả năng biến kiến thức thành sản phẩm."
+        description="Quá trình tự học và phát triển kỹ năng thông qua công việc thực tế trong thương mại điện tử, digital marketing và công cụ AI."
       />
 
       <div className="education-list">
