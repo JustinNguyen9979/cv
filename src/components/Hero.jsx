@@ -44,7 +44,11 @@ export default function Hero({ data }) {
         <div className="avatar-ring">
           <div className="avatar-core">
             {data.avatarUrl ? (
-              <img src={data.avatarUrl} alt={data.name} className="avatar-img" />
+              <img 
+                src={data.avatarUrl.startsWith('http') ? data.avatarUrl : `${import.meta.env.BASE_URL}${data.avatarUrl.replace(/^\//, '')}`} 
+                alt={data.name} 
+                className="avatar-img" 
+              />
             ) : (
               data.avatarText
             )}

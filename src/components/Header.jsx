@@ -19,7 +19,17 @@ export default function Header({ data, theme, onToggleTheme }) {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Về đầu trang">
-        <span className="brand-mark">{data.avatarText}</span>
+        <span className="brand-mark">
+          {data.avatarUrl ? (
+            <img 
+              src={data.avatarUrl.startsWith('http') ? data.avatarUrl : `${import.meta.env.BASE_URL}${data.avatarUrl.replace(/^\//, '')}`} 
+              alt={data.name} 
+              className="avatar-img" 
+            />
+          ) : (
+            data.avatarText
+          )}
+        </span>
         <span>
           <strong>{data.name}</strong>
           <small>Justin Nguyễn • E-commerce Executive</small>

@@ -81,6 +81,7 @@
   color: #051118;
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--accent));
+  overflow: hidden;
 }
 
 .brand strong,
@@ -415,7 +416,6 @@
   border-radius: 999px;
   background:
     conic-gradient(from 180deg, var(--primary), var(--secondary), var(--accent), var(--primary));
-  animation: spinGlow 7s linear infinite;
 }
 
 .avatar-core {
@@ -429,6 +429,7 @@
   font-size: 3rem;
   font-weight: 1000;
   background: linear-gradient(135deg, var(--primary), var(--accent));
+  overflow: hidden;
 }
 
 .avatar-img {
@@ -436,6 +437,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 999px;
+  transform: scale(1.30) translateY(-17.5%); /* Dùng tỷ lệ % thay cho px để tự động co dãn chuẩn ở cả avatar to và nhỏ */
 }
 
 .profile-card-body {
