@@ -45,8 +45,19 @@ export default function Hero({ data }) {
 
       <div 
         className="hero-card-wrapper reveal-deep-space"
+        role="button"
+        tabIndex={0}
         onClick={() => setIsFlipped(!isFlipped)}
-        onMouseLeave={() => setIsFlipped(false)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            setIsFlipped(!isFlipped);
+          }
+        }}
+        onMouseLeave={() => {
+          if (window.matchMedia('(hover: hover)').matches) {
+            setIsFlipped(false);
+          }
+        }}
       >
         <div className="hero-card-floating-layer">
           <div className={`hero-card-inner-3d ${isFlipped ? 'is-flipped' : ''}`}>

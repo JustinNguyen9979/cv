@@ -391,6 +391,7 @@
   width: 100%;
   perspective: 1500px;
   transform-style: preserve-3d;
+  cursor: pointer; /* Kích hoạt nhận click event trên iOS/iPadOS cho thẻ div */
 }
 
 /* Lớp đệm lơ lửng độc lập */
