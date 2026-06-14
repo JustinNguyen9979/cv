@@ -139,46 +139,110 @@
 }
 
 .theme-toggle {
-  padding: 0 16px;
+  padding: 0 16px 0 26px;
+  border: 1px dashed var(--line);
+  border-left: 3px solid var(--primary);
+  border-right: 3px solid var(--primary);
+  border-radius: 4px;
+  color: var(--text);
+  background: rgba(16, 24, 46, 0.52);
+  font-family: monospace;
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   transition: 
     transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
     border-color 0.25s ease,
-    box-shadow 0.25s ease,
     background 0.25s ease,
-    color 0.25s ease;
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  left: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+  animation: cyberBlink 1.2s infinite;
+}
+
+.theme-toggle::after {
+  content: 'SYS';
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  opacity: 0.42;
+  margin-left: 6px;
+  border-left: 1px solid var(--line);
+  padding-left: 6px;
+  transition: opacity 0.25s ease, color 0.25s ease;
 }
 
 .theme-toggle:hover {
-  transform: translateY(-2px) scale(1.03);
   border-color: var(--primary);
+  color: var(--primary);
   box-shadow: 
-    0 0 18px rgba(110, 231, 255, 0.35),
-    inset 0 0 8px rgba(110, 231, 255, 0.15);
-  background: rgba(110, 231, 255, 0.08);
+    0 0 22px rgba(110, 231, 255, 0.28),
+    inset 0 0 12px rgba(110, 231, 255, 0.12);
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(110, 231, 255, 0.15) 50%, transparent 100%),
+    rgba(110, 231, 255, 0.05);
+  background-size: 200% 100%;
+  animation: 
+    cyberGlitch 0.25s steps(2) infinite,
+    scanSweep 1.5s linear infinite;
+}
+
+.theme-toggle:hover::after {
+  opacity: 0.85;
   color: var(--primary);
 }
 
 .theme-toggle:active {
-  transform: translateY(0) scale(0.97);
+  transform: scale(0.95);
 }
 
 .theme-toggle svg {
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  animation: iconSpinPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: cyberIconSpin 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .theme-toggle:hover svg {
-  transform: scale(1.12) rotate(45deg);
+  transform: scale(1.15) rotate(90deg);
+  filter: drop-shadow(0 0 8px var(--primary));
 }
 
-@keyframes iconSpinPop {
+@keyframes scanSweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes cyberBlink {
+  0%, 100% { opacity: 0.35; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes cyberGlitch {
+  0% { transform: translateY(-2px) translate(0, 0); }
+  25% { transform: translateY(-2px) translate(-0.5px, 0.5px); }
+  50% { transform: translateY(-2px) translate(0.5px, -0.5px); }
+  75% { transform: translateY(-2px) translate(-0.5px, -0.5px); }
+  100% { transform: translateY(-2px) translate(0.5px, 0.5px); }
+}
+
+@keyframes cyberIconSpin {
   0% {
-    transform: scale(0.4) rotate(-120deg);
+    transform: scale(0.3) rotate(-180deg);
+    filter: drop-shadow(0 0 12px var(--primary));
     opacity: 0;
-    filter: drop-shadow(0 0 0px var(--primary));
   }
   50% {
-    filter: drop-shadow(0 0 8px var(--primary));
+    filter: drop-shadow(0 0 20px var(--primary));
   }
   100% {
     transform: scale(1) rotate(0deg);
