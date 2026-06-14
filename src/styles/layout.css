@@ -19,6 +19,7 @@
   filter: blur(34px);
   opacity: 0.26;
   animation: floatOrb 9s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .orb-one {
@@ -41,6 +42,7 @@
   height: 160px;
   background: linear-gradient(to bottom, transparent, rgba(110, 231, 255, 0.09), transparent);
   animation: scanMove 8s linear infinite;
+  will-change: transform;
 }
 
 .site-header {
@@ -177,11 +179,13 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 10px;
   background: linear-gradient(to bottom, transparent, var(--primary), transparent);
   box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
   opacity: 0;
-  left: -10%;
+  left: 0;
+  transform: translate3d(-20px, 0, 0);
+  will-change: transform;
   z-index: 2;
 }
 
@@ -218,9 +222,9 @@
 }
 
 @keyframes cyberLaserScan {
-  0% { left: -10%; }
-  50% { left: 110%; }
-  100% { left: -10%; }
+  0% { transform: translate3d(-20px, 0, 0); }
+  50% { transform: translate3d(160px, 0, 0); }
+  100% { transform: translate3d(-20px, 0, 0); }
 }
 
 @keyframes turbineSpin {
@@ -519,6 +523,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 /* Chỉ áp dụng hiệu ứng lơ lửng và xoay 3D trên máy tính */
@@ -560,6 +565,7 @@
   transform-style: preserve-3d;
   /* transition giúp khi nhả chuột (hover out) card lật mượt mà về góc xoay */
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 @keyframes floatCard {
@@ -751,11 +757,14 @@
 
 /* Chấm tròn phát sáng nhấp nháy */
 .glow-dot {
-  animation: pulseGlow 2s infinite alternate;
   filter: drop-shadow(0 0 3.5px currentColor);
 }
 
-.glow-dot:nth-child(even) {
+.is-circuit-active .glow-dot {
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.is-circuit-active .glow-dot:nth-child(even) {
   animation-delay: 1s;
 }
 
@@ -802,7 +811,6 @@
   stroke-dasharray: 6 5;
   opacity: 0.42;
   filter: drop-shadow(0 0 1.5px #00f0ff) drop-shadow(0 0 3px rgba(0, 240, 255, 0.4));
-  animation: dashedFlow 25s linear infinite;
 }
 .neon-line-dashed-pink {
   stroke: #ff007f;
@@ -810,7 +818,6 @@
   stroke-dasharray: 6 5;
   opacity: 0.42;
   filter: drop-shadow(0 0 1.5px #ff007f) drop-shadow(0 0 3px rgba(255, 0, 127, 0.4));
-  animation: dashedFlow 25s linear infinite;
 }
 .neon-line-dashed-purple {
   stroke: #9d00ff;
@@ -818,7 +825,6 @@
   stroke-dasharray: 6 5;
   opacity: 0.42;
   filter: drop-shadow(0 0 1.5px #9d00ff) drop-shadow(0 0 3px rgba(157, 0, 255, 0.4));
-  animation: dashedFlow 25s linear infinite;
 }
 .neon-line-dashed-green {
   stroke: #00ff66;
@@ -826,7 +832,6 @@
   stroke-dasharray: 6 5;
   opacity: 0.42;
   filter: drop-shadow(0 0 1.5px #00ff66) drop-shadow(0 0 3px rgba(0, 255, 102, 0.4));
-  animation: dashedFlow 25s linear infinite;
 }
 .neon-line-dashed-yellow {
   stroke: #ffea00;
@@ -834,6 +839,13 @@
   stroke-dasharray: 6 5;
   opacity: 0.42;
   filter: drop-shadow(0 0 1.5px #ffea00) drop-shadow(0 0 3px rgba(255, 234, 0, 0.4));
+}
+
+.is-circuit-active .neon-line-dashed-cyan,
+.is-circuit-active .neon-line-dashed-pink,
+.is-circuit-active .neon-line-dashed-purple,
+.is-circuit-active .neon-line-dashed-green,
+.is-circuit-active .neon-line-dashed-yellow {
   animation: dashedFlow 25s linear infinite;
 }
 
@@ -842,8 +854,6 @@
     stroke-dashoffset: -120;
   }
 }
-
-
 
 /* Lõi phát sáng bổ sung cho các đường mạch lớn */
 .neon-core-line {
@@ -858,9 +868,12 @@
   stroke-width: 1.2;
   stroke-dasharray: 20 40;
   stroke-dashoffset: 0;
-  animation: neonFlowAnimation 3s linear infinite;
   stroke-linecap: round;
   filter: drop-shadow(0 0 3px currentColor);
+}
+
+.is-circuit-active .neon-flow-line {
+  animation: neonFlowAnimation 3s linear infinite;
 }
 
 @keyframes neonFlowAnimation {
@@ -998,6 +1011,7 @@
   background: conic-gradient(#00f0ff, #ff007f, #9d00ff, #00ff66, #00f0ff);
   animation: rotateGPU 6s linear infinite;
   transform-origin: center;
+  will-change: transform;
 }
 
 @keyframes rotateGPU {
@@ -1439,7 +1453,7 @@
   from {
     opacity: 0;
     transform: perspective(1200px) translate3d(0, 80px, -350px) rotateX(25deg);
-    filter: blur(12px);
+    filter: blur(4px);
   }
   to {
     opacity: 1;
@@ -1463,7 +1477,7 @@
   from {
     opacity: 0;
     transform: perspective(1200px) translate3d(-150px, 0, 0) rotateY(35deg) rotate(-5deg);
-    filter: blur(6px);
+    filter: blur(3px);
   }
   to {
     opacity: 1;
@@ -1476,7 +1490,7 @@
   from {
     opacity: 0;
     transform: perspective(1200px) translate3d(150px, 0, 0) rotateY(-35deg) rotate(5deg);
-    filter: blur(6px);
+    filter: blur(3px);
   }
   to {
     opacity: 1;
@@ -1489,8 +1503,8 @@
 .reveal-deep-space {
   opacity: 0;
   transform: perspective(1200px) translate3d(0, 80px, -350px) rotateX(25deg);
-  filter: blur(12px);
-  will-change: transform, opacity, filter;
+  filter: blur(4px);
+  will-change: transform, opacity;
 }
 
 .reveal-deep-space.is-visible {
@@ -1515,8 +1529,8 @@
 .reveal-wing-left {
   opacity: 0;
   transform: perspective(1200px) translate3d(-150px, 0, 0) rotateY(35deg) rotate(-5deg);
-  filter: blur(6px);
-  will-change: transform, opacity, filter;
+  filter: blur(3px);
+  will-change: transform, opacity;
 }
 
 .reveal-wing-left.is-visible {
@@ -1528,8 +1542,8 @@
 .reveal-wing-right {
   opacity: 0;
   transform: perspective(1200px) translate3d(150px, 0, 0) rotateY(-35deg) rotate(5deg);
-  filter: blur(6px);
-  will-change: transform, opacity, filter;
+  filter: blur(3px);
+  will-change: transform, opacity;
 }
 
 .reveal-wing-right.is-visible {

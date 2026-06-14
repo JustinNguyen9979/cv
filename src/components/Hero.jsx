@@ -124,7 +124,7 @@ export default function Hero({ data }) {
             </aside>
 
             {/* MẶT SAU (BACK) - Họa tiết mạch điện công nghệ, AI, Cyber */}
-            <div className="hero-card-back">
+            <div className={`hero-card-back ${isFlipped ? 'is-circuit-active' : ''}`}>
               <div className="hero-card-border" />
               
               <div className="cyber-circuit-bg">
