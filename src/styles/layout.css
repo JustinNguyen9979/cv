@@ -662,12 +662,13 @@
   position: absolute;
   inset: 0;
   opacity: 0.75;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .cyber-svg {
   width: 100%;
   height: 100%;
+  pointer-events: auto;
 }
 
 .cyber-chip {
@@ -683,6 +684,17 @@
     0 0 30px rgba(0, 240, 255, 0.5),
     0 0 50px rgba(255, 0, 127, 0.3),
     inset 0 0 15px rgba(0, 240, 255, 0.25);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.cyber-chip:hover {
+  transform: scale(1.06);
+  box-shadow: 
+    0 0 45px rgba(0, 240, 255, 0.8),
+    0 0 75px rgba(255, 0, 127, 0.5),
+    inset 0 0 20px rgba(0, 240, 255, 0.4);
 }
 
 .chip-inner {
@@ -843,6 +855,104 @@
   to {
     stroke-dashoffset: -120;
   }
+}
+
+.neon-line-catch {
+  stroke: transparent !important;
+  stroke-width: 22px !important; /* Vùng đệm 22px tàng hình giúp hover cực kỳ nhạy và dễ dàng */
+  fill: none !important;
+  pointer-events: stroke !important;
+  cursor: pointer;
+}
+
+/* --- Hiệu ứng Hover đường mạch điện Hero Card --- */
+/* Nhóm đường mạch mặc định */
+.circuit-line-group {
+  opacity: 1;
+  pointer-events: auto !important; /* Buộc nhận sự kiện chuột bất kể phần tử cha có pointer-events: none */
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Nét vẽ trong nhóm */
+.circuit-line-group path {
+  pointer-events: stroke !important; /* Chỉ nhận tương tác chuột trên đường vẽ, không nhận trên phần khoảng trống */
+  transition: stroke-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Chấm tròn trong nhóm */
+.circuit-line-group .glow-dot {
+  pointer-events: auto !important;
+  transition: r 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Nhánh được hover trực tiếp sẽ sáng 100% */
+.circuit-line-group:hover {
+  opacity: 1 !important;
+}
+
+/* Tăng độ dày và hiệu ứng phát sáng cho mạch chính khi hover */
+.circuit-line-group:hover .neon-line-cyan {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 2px #00f0ff) drop-shadow(0 0 2px #00f0ff) drop-shadow(0 0 6px #00f0ff) drop-shadow(0 0 6px #00f0ff);
+}
+.circuit-line-group:hover .neon-line-pink {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 2px #ff007f) drop-shadow(0 0 2px #ff007f) drop-shadow(0 0 6px #ff007f) drop-shadow(0 0 6px #ff007f);
+}
+.circuit-line-group:hover .neon-line-purple {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 2px #9d00ff) drop-shadow(0 0 2px #9d00ff) drop-shadow(0 0 6px #9d00ff) drop-shadow(0 0 6px #9d00ff);
+}
+.circuit-line-group:hover .neon-line-green {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 2px #00ff66) drop-shadow(0 0 2px #00ff66) drop-shadow(0 0 6px #00ff66) drop-shadow(0 0 6px #00ff66);
+}
+.circuit-line-group:hover .neon-line-yellow {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 2px #ffea00) drop-shadow(0 0 2px #ffea00) drop-shadow(0 0 6px #ffea00) drop-shadow(0 0 6px #ffea00);
+}
+
+/* Tăng độ dày của tia sáng chạy động */
+.circuit-line-group:hover .neon-flow-line {
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 3px currentColor) drop-shadow(0 0 3px currentColor) drop-shadow(0 0 5px currentColor);
+}
+
+/* Làm sáng rõ các đường đứt phụ khi hover vào chúng */
+.circuit-line-group:hover .neon-line-dashed-cyan {
+  opacity: 1;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 2px #00f0ff) drop-shadow(0 0 2px #00f0ff) drop-shadow(0 0 5px #00f0ff) drop-shadow(0 0 5px #00f0ff);
+}
+.circuit-line-group:hover .neon-line-dashed-pink {
+  opacity: 1;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 2px #ff007f) drop-shadow(0 0 2px #ff007f) drop-shadow(0 0 5px #ff007f) drop-shadow(0 0 5px #ff007f);
+}
+.circuit-line-group:hover .neon-line-dashed-purple {
+  opacity: 1;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 2px #9d00ff) drop-shadow(0 0 2px #9d00ff) drop-shadow(0 0 5px #9d00ff) drop-shadow(0 0 5px #9d00ff);
+}
+.circuit-line-group:hover .neon-line-dashed-green {
+  opacity: 1;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 2px #00ff66) drop-shadow(0 0 2px #00ff66) drop-shadow(0 0 5px #00ff66) drop-shadow(0 0 5px #00ff66);
+}
+.circuit-line-group:hover .neon-line-dashed-yellow {
+  opacity: 1;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 2px #ffea00) drop-shadow(0 0 2px #ffea00) drop-shadow(0 0 5px #ffea00) drop-shadow(0 0 5px #ffea00);
+}
+
+/* Chấm tròn phát sáng to ra và sáng hơn khi hover vào nhóm của nó */
+.circuit-line-group:hover .glow-dot {
+  r: 5px;
+  filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 6px currentColor) drop-shadow(0 0 10px currentColor);
 }
 
 @property --angle {

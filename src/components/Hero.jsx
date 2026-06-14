@@ -143,97 +143,191 @@ export default function Hero({ data }) {
                 <circle cx="200" cy="300" r="190" stroke="rgba(157, 0, 255, 0.04)" strokeWidth="1.5" />
 
                 {/* CÁC ĐƯỜNG MẠCH PHỤ NÉT ĐỨT MỜ TẠO CHIỀU SÂU (MULTI-LAYER PCB) - DÀY ĐẶC & SÁNG HƠN */}
-                <path d="M 170 240 L 170 190 L 120 140 L 120 90" className="neon-line-dashed-cyan" />
-                <path d="M 230 240 L 230 180 L 280 130 L 280 80" className="neon-line-dashed-pink" />
-                <path d="M 170 360 L 170 410 L 120 460 L 120 510" className="neon-line-dashed-purple" />
-                <path d="M 230 360 L 230 420 L 280 470 L 280 520" className="neon-line-dashed-cyan" />
-                <path d="M 140 315 L 40 315" className="neon-line-dashed-pink" />
-                <path d="M 260 285 L 360 285" className="neon-line-dashed-purple" />
-                <path d="M 70 240 L 100 190" className="neon-line-dashed-purple" />
-                <path d="M 330 360 L 300 410" className="neon-line-dashed-cyan" />
+                <g className="circuit-line-group">
+                  <path d="M 170 240 L 170 190 L 120 140 L 120 90" className="neon-line-catch" />
+                  <path d="M 170 240 L 170 190 L 120 140 L 120 90" className="neon-line-dashed-cyan" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 230 240 L 230 180 L 280 130 L 280 80" className="neon-line-catch" />
+                  <path d="M 230 240 L 230 180 L 280 130 L 280 80" className="neon-line-dashed-pink" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 170 360 L 170 410 L 120 460 L 120 510" className="neon-line-catch" />
+                  <path d="M 170 360 L 170 410 L 120 460 L 120 510" className="neon-line-dashed-purple" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 230 360 L 230 420 L 280 470 L 280 520" className="neon-line-catch" />
+                  <path d="M 230 360 L 230 420 L 280 470 L 280 520" className="neon-line-dashed-cyan" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 140 315 L 40 315" className="neon-line-catch" />
+                  <path d="M 140 315 L 40 315" className="neon-line-dashed-pink" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 260 285 L 360 285" className="neon-line-catch" />
+                  <path d="M 260 285 L 360 285" className="neon-line-dashed-purple" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 70 240 L 100 190" className="neon-line-catch" />
+                  <path d="M 70 240 L 100 190" className="neon-line-dashed-purple" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 330 360 L 300 410" className="neon-line-catch" />
+                  <path d="M 330 360 L 300 410" className="neon-line-dashed-cyan" />
+                </g>
 
                 {/* Các đường đứt mờ bổ sung để tăng mật độ bảng mạch */}
-                <path d="M 190 260 L 190 160 L 130 100 L 50 100" className="neon-line-dashed-green" />
-                <path d="M 210 260 L 210 170 L 270 110 L 340 110" className="neon-line-dashed-yellow" />
-                <path d="M 100 70 L 60 110 L 60 170" className="neon-line-dashed-cyan" />
-                <path d="M 300 60 L 340 100 L 340 180" className="neon-line-dashed-pink" />
-                <path d="M 80 240 L 80 320" className="neon-line-dashed-purple" />
-                <path d="M 320 240 L 320 320" className="neon-line-dashed-green" />
-                <path d="M 190 340 L 190 430 L 130 490 L 50 490" className="neon-line-dashed-purple" />
-                <path d="M 210 340 L 210 440 L 270 500 L 340 500" className="neon-line-dashed-green" />
-                <path d="M 70 360 L 100 410" className="neon-line-dashed-yellow" />
-                <path d="M 330 240 L 300 190" className="neon-line-dashed-pink" />
+                <g className="circuit-line-group">
+                  <path d="M 190 260 L 190 160 L 130 100 L 50 100" className="neon-line-catch" />
+                  <path d="M 190 260 L 190 160 L 130 100 L 50 100" className="neon-line-dashed-green" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 210 260 L 210 170 L 270 110 L 340 110" className="neon-line-catch" />
+                  <path d="M 210 260 L 210 170 L 270 110 L 340 110" className="neon-line-dashed-yellow" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 100 70 L 60 110 L 60 170" className="neon-line-catch" />
+                  <path d="M 100 70 L 60 110 L 60 170" className="neon-line-dashed-cyan" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 300 60 L 340 100 L 340 180" className="neon-line-catch" />
+                  <path d="M 300 60 L 340 100 L 340 180" className="neon-line-dashed-pink" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 80 240 L 80 320" className="neon-line-catch" />
+                  <path d="M 80 240 L 80 320" className="neon-line-dashed-purple" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 320 240 L 320 320" className="neon-line-catch" />
+                  <path d="M 320 240 L 320 320" className="neon-line-dashed-green" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 190 340 L 190 430 L 130 490 L 50 490" className="neon-line-catch" />
+                  <path d="M 190 340 L 190 430 L 130 490 L 50 490" className="neon-line-dashed-purple" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 210 340 L 210 440 L 270 500 L 340 500" className="neon-line-catch" />
+                  <path d="M 210 340 L 210 440 L 270 500 L 340 500" className="neon-line-dashed-green" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 70 360 L 100 410" className="neon-line-catch" />
+                  <path d="M 70 360 L 100 410" className="neon-line-dashed-yellow" />
+                </g>
+                <g className="circuit-line-group">
+                  <path d="M 330 240 L 300 190" className="neon-line-catch" />
+                  <path d="M 330 240 L 300 190" className="neon-line-dashed-pink" />
+                </g>
 
                 {/* HỆ THỐNG ĐƯỜNG MẠCH ĐIỆN NEON XUẤT PHÁT TỪ CHIP TRUNG TÂM (Tâm 200, 300) */}
                 
                 {/* NHÁNH TRÊN BÊN TRÁI */}
                 {/* Mạch chính Cyan với tia sáng chạy */}
-                <path d="M 180 260 L 180 150 L 110 80 L 40 80 L 40 110" className="neon-line-cyan" />
-                <path d="M 180 260 L 180 150 L 110 80 L 40 80 L 40 110" className="neon-flow-line" style={{ color: '#00f0ff' }} />
+                <g className="circuit-line-group">
+                  <path d="M 180 260 L 180 150 L 110 80 L 40 80 L 40 110" className="neon-line-catch" />
+                  <path d="M 180 260 L 180 150 L 110 80 L 40 80 L 40 110" className="neon-line-cyan" />
+                  <path d="M 180 260 L 180 150 L 110 80 L 40 80 L 40 110" className="neon-flow-line" style={{ color: '#00f0ff' }} />
+                  <circle cx="40" cy="110" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
+                </g>
                 
                 {/* Mạch phụ Green */}
-                <path d="M 150 280 L 110 280 L 70 240 L 70 140" className="neon-line-green" />
+                <g className="circuit-line-group">
+                  <path d="M 150 280 L 110 280 L 70 240 L 70 140" className="neon-line-catch" />
+                  <path d="M 150 280 L 110 280 L 70 240 L 70 140" className="neon-line-green" />
+                  <circle cx="70" cy="140" r="3" fill="#00ff66" className="glow-dot" style={{ color: '#00ff66' }} />
+                </g>
                 
                 {/* Mạch phụ Pink */}
-                <path d="M 160 250 L 100 190 L 100 70" className="neon-line-pink" />
+                <g className="circuit-line-group">
+                  <path d="M 160 250 L 100 190 L 100 70" className="neon-line-catch" />
+                  <path d="M 160 250 L 100 190 L 100 70" className="neon-line-pink" />
+                  <circle cx="100" cy="70" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
+                </g>
 
                 {/* NHÁNH TRÊN BÊN PHẢI */}
                 {/* Mạch chính Pink với tia sáng chạy */}
-                <path d="M 220 260 L 220 160 L 290 90 L 360 90 L 360 130" className="neon-line-pink" />
-                <path d="M 220 260 L 220 160 L 290 90 L 360 90 L 360 130" className="neon-flow-line" style={{ color: '#ff007f' }} />
+                <g className="circuit-line-group">
+                  <path d="M 220 260 L 220 160 L 290 90 L 360 90 L 360 130" className="neon-line-catch" />
+                  <path d="M 220 260 L 220 160 L 290 90 L 360 90 L 360 130" className="neon-line-pink" />
+                  <path d="M 220 260 L 220 160 L 290 90 L 360 90 L 360 130" className="neon-flow-line" style={{ color: '#ff007f' }} />
+                  <circle cx="360" cy="130" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
+                </g>
                 
                 {/* Mạch phụ Cyan */}
-                <path d="M 250 280 L 290 280 L 330 240 L 330 150" className="neon-line-cyan" />
+                <g className="circuit-line-group">
+                  <path d="M 250 280 L 290 280 L 330 240 L 330 150" className="neon-line-catch" />
+                  <path d="M 250 280 L 290 280 L 330 240 L 330 150" className="neon-line-cyan" />
+                  <circle cx="330" cy="150" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
+                </g>
                 
                 {/* Mạch phụ Purple */}
-                <path d="M 240 250 L 300 190 L 300 60" className="neon-line-purple" />
+                <g className="circuit-line-group">
+                  <path d="M 240 250 L 300 190 L 300 60" className="neon-line-catch" />
+                  <path d="M 240 250 L 300 190 L 300 60" className="neon-line-purple" />
+                  <circle cx="300" cy="60" r="3" fill="#9d00ff" className="glow-dot" style={{ color: '#9d00ff' }} />
+                </g>
 
                 {/* NHÁNH DƯỚI BÊN TRÁI */}
                 {/* Mạch chính Purple với tia sáng chạy */}
-                <path d="M 180 340 L 180 440 L 110 510 L 40 510 L 40 480" className="neon-line-purple" />
-                <path d="M 180 340 L 180 440 L 110 510 L 40 510 L 40 480" className="neon-flow-line" style={{ color: '#9d00ff' }} />
+                <g className="circuit-line-group">
+                  <path d="M 180 340 L 180 440 L 110 510 L 40 510 L 40 480" className="neon-line-catch" />
+                  <path d="M 180 340 L 180 440 L 110 510 L 40 510 L 40 480" className="neon-line-purple" />
+                  <path d="M 180 340 L 180 440 L 110 510 L 40 510 L 40 480" className="neon-flow-line" style={{ color: '#9d00ff' }} />
+                  <circle cx="40" cy="480" r="3" fill="#9d00ff" className="glow-dot" style={{ color: '#9d00ff' }} />
+                </g>
                 
                 {/* Mạch phụ Yellow */}
-                <path d="M 150 320 L 110 320 L 70 360 L 70 460" className="neon-line-yellow" />
+                <g className="circuit-line-group">
+                  <path d="M 150 320 L 110 320 L 70 360 L 70 460" className="neon-line-catch" />
+                  <path d="M 150 320 L 110 320 L 70 360 L 70 460" className="neon-line-yellow" />
+                  <circle cx="70" cy="460" r="3" fill="#ffea00" className="glow-dot" style={{ color: '#ffea00' }} />
+                </g>
                 
                 {/* Mạch phụ Cyan */}
-                <path d="M 160 350 L 100 410 L 100 530" className="neon-line-cyan" />
+                <g className="circuit-line-group">
+                  <path d="M 160 350 L 100 410 L 100 530" className="neon-line-catch" />
+                  <path d="M 160 350 L 100 410 L 100 530" className="neon-line-cyan" />
+                  <circle cx="100" cy="530" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
+                </g>
 
                 {/* NHÁNH DƯỚI BÊN PHẢI */}
                 {/* Mạch chính Green với tia sáng chạy */}
-                <path d="M 220 340 L 220 450 L 290 520 L 360 520 L 360 490" className="neon-line-green" />
-                <path d="M 220 340 L 220 450 L 290 520 L 360 520 L 360 490" className="neon-flow-line" style={{ color: '#00ff66' }} />
+                <g className="circuit-line-group">
+                  <path d="M 220 340 L 220 450 L 290 520 L 360 520 L 360 490" className="neon-line-catch" />
+                  <path d="M 220 340 L 220 450 L 290 520 L 360 520 L 360 490" className="neon-line-green" />
+                  <path d="M 220 340 L 220 450 L 290 520 L 360 520 L 360 490" className="neon-flow-line" style={{ color: '#00ff66' }} />
+                  <circle cx="360" cy="490" r="3" fill="#00ff66" className="glow-dot" style={{ color: '#00ff66' }} />
+                </g>
                 
                 {/* Mạch phụ Pink */}
-                <path d="M 250 320 L 290 320 L 330 360 L 330 470" className="neon-line-pink" />
+                <g className="circuit-line-group">
+                  <path d="M 250 320 L 290 320 L 330 360 L 330 470" className="neon-line-catch" />
+                  <path d="M 250 320 L 290 320 L 330 360 L 330 470" className="neon-line-pink" />
+                  <circle cx="330" cy="470" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
+                </g>
                 
                 {/* Mạch phụ Purple */}
-                <path d="M 240 350 L 300 410 L 300 540" className="neon-line-purple" />
+                <g className="circuit-line-group">
+                  <path d="M 240 350 L 300 410 L 300 540" className="neon-line-catch" />
+                  <path d="M 240 350 L 300 410 L 300 540" className="neon-line-purple" />
+                  <circle cx="300" cy="540" r="3" fill="#9d00ff" className="glow-dot" style={{ color: '#9d00ff' }} />
+                </g>
 
                 {/* NHÁNH NGANG (TRUYỀN TIN NGANG) */}
                 {/* Sang trái */}
-                <path d="M 150 300 L 30 300" className="neon-line-cyan" />
-                <path d="M 150 300 L 30 300" className="neon-flow-line" style={{ color: '#00f0ff' }} />
+                <g className="circuit-line-group">
+                  <path d="M 150 300 L 30 300" className="neon-line-catch" />
+                  <path d="M 150 300 L 30 300" className="neon-line-cyan" />
+                  <path d="M 150 300 L 30 300" className="neon-flow-line" style={{ color: '#00f0ff' }} />
+                  <circle cx="30" cy="300" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
+                </g>
                 
                 {/* Sang phải */}
-                <path d="M 250 300 L 370 300" className="neon-line-pink" />
-                <path d="M 250 300 L 370 300" className="neon-flow-line" style={{ color: '#ff007f' }} />
-
-                {/* CÁC CHẤM TRÒN PHÁT SÁNG TẠI ĐẦU MÚT MẠCH ĐIỆN */}
-                <circle cx="40" cy="110" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
-                <circle cx="70" cy="140" r="3" fill="#00ff66" className="glow-dot" style={{ color: '#00ff66' }} />
-                <circle cx="100" cy="70" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
-                <circle cx="360" cy="130" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
-                <circle cx="330" cy="150" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
-                <circle cx="300" cy="60" r="3" fill="#9d00ff" className="glow-dot" style={{ color: '#9d00ff' }} />
-                <circle cx="40" cy="480" r="3" fill="#9d00ff" className="glow-dot" style={{ color: '#9d00ff' }} />
-                <circle cx="70" cy="460" r="3" fill="#ffea00" className="glow-dot" style={{ color: '#ffea00' }} />
-                <circle cx="100" cy="530" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
-                <circle cx="360" cy="490" r="3" fill="#00ff66" className="glow-dot" style={{ color: '#00ff66' }} />
-                <circle cx="330" cy="470" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
-                <circle cx="300" cy="540" r="3" fill="#9d00ff" className="glow-dot" style={{ color: '#9d00ff' }} />
-                <circle cx="30" cy="300" r="3" fill="#00f0ff" className="glow-dot" style={{ color: '#00f0ff' }} />
-                <circle cx="370" cy="300" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
+                <g className="circuit-line-group">
+                  <path d="M 250 300 L 370 300" className="neon-line-catch" />
+                  <path d="M 250 300 L 370 300" className="neon-line-pink" />
+                  <path d="M 250 300 L 370 300" className="neon-flow-line" style={{ color: '#ff007f' }} />
+                  <circle cx="370" cy="300" r="3" fill="#ff007f" className="glow-dot" style={{ color: '#ff007f' }} />
+                </g>
               </svg>
             </div>
 
