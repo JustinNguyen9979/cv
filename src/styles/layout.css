@@ -135,10 +135,56 @@
   color: var(--text);
   background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .theme-toggle {
-  padding: 0 13px;
+  padding: 0 16px;
+  transition: 
+    transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: var(--primary);
+  box-shadow: 
+    0 0 18px rgba(110, 231, 255, 0.35),
+    inset 0 0 8px rgba(110, 231, 255, 0.15);
+  background: rgba(110, 231, 255, 0.08);
+  color: var(--primary);
+}
+
+.theme-toggle:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.theme-toggle svg {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: iconSpinPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.theme-toggle:hover svg {
+  transform: scale(1.12) rotate(45deg);
+}
+
+@keyframes iconSpinPop {
+  0% {
+    transform: scale(0.4) rotate(-120deg);
+    opacity: 0;
+    filter: drop-shadow(0 0 0px var(--primary));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px var(--primary));
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 0px transparent);
+  }
 }
 
 .menu-toggle {
