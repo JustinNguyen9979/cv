@@ -316,6 +316,7 @@
 .glitch-text::before {
   content: '';
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   height: 2px;
@@ -324,45 +325,40 @@
   opacity: 0;
   pointer-events: none;
   z-index: 2;
+  will-change: transform, opacity;
   animation: static-line 5s infinite;
 }
 
 @keyframes static-line {
   0%, 59.9%, 65.1%, 79.9%, 82.1%, 100% {
     opacity: 0;
-    top: 0;
-    height: 2px;
+    transform: translateY(0) scaleY(1);
     background: var(--primary);
     box-shadow: 0 0 8px var(--primary);
   }
   60% {
     opacity: 0.8;
-    top: 25%;
-    height: 1px;
+    transform: translateY(0.25em) scaleY(0.5);
   }
   61% {
     opacity: 0.9;
-    top: 70%;
-    height: 3px;
+    transform: translateY(0.7em) scaleY(1.5);
   }
   62% {
     opacity: 0;
-    top: 40%;
+    transform: translateY(0.4em) scaleY(1);
   }
   63% {
     opacity: 0.7;
-    top: 15%;
-    height: 2px;
+    transform: translateY(0.15em) scaleY(1);
   }
   64% {
     opacity: 0.8;
-    top: 85%;
-    height: 1px;
+    transform: translateY(0.85em) scaleY(0.5);
   }
   64.5% {
     opacity: 0.9;
-    top: 50%;
-    height: 4px;
+    transform: translateY(0.5em) scaleY(2);
     background: var(--accent);
     box-shadow: 0 0 8px var(--accent);
   }
@@ -371,8 +367,7 @@
   }
   80% {
     opacity: 0.8;
-    top: 60%;
-    height: 2px;
+    transform: translateY(0.6em) scaleY(1);
     background: var(--secondary);
     box-shadow: 0 0 8px var(--secondary);
   }
@@ -671,30 +666,48 @@
   pointer-events: auto;
 }
 
-.cyber-chip {
+.cyber-chip-wrapper {
   position: relative;
   z-index: 2;
   width: 140px;
   height: 140px;
-  padding: 2.5px;
   border-radius: 24px;
-  background: conic-gradient(from var(--angle), #00f0ff, #ff007f, #9d00ff, #00f0ff);
-  animation: rotate-gradient-angle 4s linear infinite;
   box-shadow: 
     0 0 30px rgba(0, 240, 255, 0.5),
-    0 0 50px rgba(255, 0, 127, 0.3),
-    inset 0 0 15px rgba(0, 240, 255, 0.25);
+    0 0 50px rgba(255, 0, 127, 0.3);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
-.cyber-chip:hover {
+.cyber-chip-wrapper:hover {
   transform: scale(1.06);
   box-shadow: 
     0 0 45px rgba(0, 240, 255, 0.8),
-    0 0 75px rgba(255, 0, 127, 0.5),
-    inset 0 0 20px rgba(0, 240, 255, 0.4);
+    0 0 75px rgba(255, 0, 127, 0.5);
+}
+
+.cyber-chip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2.5px;
+  border-radius: 24px;
+  overflow: hidden; /* Cắt viền phần gradient xoay bên trong */
+  box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.25);
+}
+
+/* Pseudo-element chứa gradient xoay mượt bằng GPU */
+.cyber-chip::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#00f0ff, #ff007f, #9d00ff, #00f0ff);
+  animation: rotateGPU 4s linear infinite;
+  transform-origin: center;
 }
 
 .chip-inner {
@@ -738,6 +751,7 @@
 /* Chấm tròn phát sáng nhấp nháy */
 .glow-dot {
   animation: pulseGlow 2s infinite alternate;
+  filter: drop-shadow(0 0 3.5px currentColor);
 }
 
 .glow-dot:nth-child(even) {
@@ -746,13 +760,10 @@
 
 @keyframes pulseGlow {
   0% {
-    opacity: 0.4;
-    r: 3px;
+    opacity: 0.35;
   }
   100% {
     opacity: 1;
-    r: 5px;
-    filter: drop-shadow(0 0 4px currentColor);
   }
 }
 
@@ -955,21 +966,14 @@
   filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 6px currentColor) drop-shadow(0 0 10px currentColor);
 }
 
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
 .hero-card-border {
   position: absolute;
   inset: 0;
   border-radius: var(--radius-xl);
   padding: 3px; /* Độ dày của viền gradient */
-  background: conic-gradient(from var(--angle), #00f0ff, #ff007f, #9d00ff, #00ff66, #00f0ff);
-  animation: rotate-gradient-angle 6s linear infinite;
   pointer-events: none;
   z-index: 3; /* Đảm bảo viền nằm trên cùng đè lên mép card */
+  overflow: hidden; /* Quan trọng để cắt phần thừa của ::before xoay tròn bên trong */
   
   /* Đục lỗ phần ruột ở giữa để màu gradient chỉ hiển thị ở phần viền 3px, tránh bị xuyên thấu qua nền kính mờ */
   -webkit-mask: 
@@ -982,12 +986,25 @@
           mask-composite: exclude;
 }
 
-@keyframes rotate-gradient-angle {
+/* Pseudo-element chứa gradient xoay mượt bằng GPU */
+.hero-card-border::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#00f0ff, #ff007f, #9d00ff, #00ff66, #00f0ff);
+  animation: rotateGPU 6s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotateGPU {
   0% {
-    --angle: 0deg;
+    transform: rotate(0deg);
   }
   100% {
-    --angle: 360deg;
+    transform: rotate(360deg);
   }
 }
 

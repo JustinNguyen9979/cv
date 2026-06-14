@@ -332,11 +332,13 @@ export default function Hero({ data }) {
             </div>
 
               {/* Chip AI Core ở tâm mặt sau */}
-              <div className="cyber-chip">
-                <div className="chip-inner">
-                  <div className="chip-glow" />
-                  <span className="chip-text">AI CORE</span>
-                  <span className="chip-subtext">OPERATOR</span>
+              <div className="cyber-chip-wrapper">
+                <div className="cyber-chip">
+                  <div className="chip-inner">
+                    <div className="chip-glow" />
+                    <span className="chip-text">AI CORE</span>
+                    <span className="chip-subtext">OPERATOR</span>
+                  </div>
                 </div>
               </div>
             </div>
