@@ -31,7 +31,7 @@ export default function Hero({ data }) {
       <div className="hero-content">
         <div className="status-pill">
           <Sparkles size={16} />
-          <span>Available for AI-powered digital projects</span>
+          <span>Sẵn sàng vận hành TikTok Shop & Shopee</span>
         </div>
 
         <h1>
