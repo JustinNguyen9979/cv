@@ -1317,9 +1317,16 @@
   background:
     linear-gradient(145deg, rgba(110, 231, 255, 0.12), transparent 40%),
     var(--surface);
-  box-shadow: var(--shadow);
+  box-shadow: none;
   overflow: hidden;
-  transition: transform 0.22s ease, border-color 0.22s ease;
+  transition: 
+    transform 0.22s ease, 
+    border-color 0.22s ease, 
+    box-shadow 0.3s ease;
+}
+
+.project-card.is-visible {
+  box-shadow: var(--shadow);
 }
 
 .project-card::after {
@@ -1453,12 +1460,10 @@
   from {
     opacity: 0;
     transform: perspective(1200px) translate3d(0, 80px, -350px) rotateX(25deg);
-    filter: blur(4px);
   }
   to {
     opacity: 1;
     transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg);
-    filter: blur(0);
   }
 }
 
@@ -1477,12 +1482,10 @@
   from {
     opacity: 0;
     transform: perspective(1200px) translate3d(-150px, 0, 0) rotateY(35deg) rotate(-5deg);
-    filter: blur(3px);
   }
   to {
     opacity: 1;
     transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
-    filter: blur(0);
   }
 }
 
@@ -1490,12 +1493,10 @@
   from {
     opacity: 0;
     transform: perspective(1200px) translate3d(150px, 0, 0) rotateY(-35deg) rotate(5deg);
-    filter: blur(3px);
   }
   to {
     opacity: 1;
     transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
-    filter: blur(0);
   }
 }
 
@@ -1503,7 +1504,6 @@
 .reveal-deep-space {
   opacity: 0;
   transform: perspective(1200px) translate3d(0, 80px, -350px) rotateX(25deg);
-  filter: blur(4px);
   will-change: transform, opacity;
 }
 
@@ -1529,7 +1529,6 @@
 .reveal-wing-left {
   opacity: 0;
   transform: perspective(1200px) translate3d(-150px, 0, 0) rotateY(35deg) rotate(-5deg);
-  filter: blur(3px);
   will-change: transform, opacity;
 }
 
@@ -1542,7 +1541,6 @@
 .reveal-wing-right {
   opacity: 0;
   transform: perspective(1200px) translate3d(150px, 0, 0) rotateY(-35deg) rotate(5deg);
-  filter: blur(3px);
   will-change: transform, opacity;
 }
 
