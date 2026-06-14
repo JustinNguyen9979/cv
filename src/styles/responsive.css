@@ -59,13 +59,14 @@
     display: inline-flex;
   }
 
-  .theme-toggle span,
-  .theme-toggle::after {
+  .theme-toggle span {
     display: none;
   }
 
   .theme-toggle {
-    padding: 0 10px 0 20px;
+    padding: 0;
+    width: 42px;
+    justify-content: center;
   }
 
   .feature-grid,
