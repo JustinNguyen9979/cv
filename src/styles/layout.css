@@ -108,15 +108,13 @@
 
 .nav-list a {
   padding: 10px 14px;
-  border-radius: 999px;
   color: var(--muted);
   font-size: 0.94rem;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .nav-list a:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--primary);
 }
 
 .header-actions {
@@ -839,6 +837,7 @@
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.06);
   text-align: center;
+  transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
 .stats-grid strong,
@@ -870,6 +869,7 @@
 
 .about-copy {
   padding: 26px;
+  transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
 .about-copy p {
@@ -906,9 +906,12 @@
 .skill-card:hover,
 .project-card:hover,
 .timeline-card:hover,
-.education-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(110, 231, 255, 0.52);
+.education-card:hover,
+.about-copy:hover,
+.contact-card:hover,
+.stats-grid div:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(110, 231, 255, 0.85) !important;
 }
 
 .feature-card svg {
@@ -1114,6 +1117,7 @@
   gap: 24px;
   align-items: center;
   padding: 30px;
+  transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
 .contact-actions {
@@ -1176,39 +1180,80 @@
    SCROLL REVEAL 3D ANIMATIONS
    ========================================================================== */
 
+/* --- Keyframe Animations for Entrance Reveals --- */
+@keyframes revealDeepSpace {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) translate3d(0, 80px, -350px) rotateX(25deg);
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes revealCardFlip {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) scale(0.8) rotateY(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes revealWingLeft {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) translate3d(-150px, 0, 0) rotateY(35deg) rotate(-5deg);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes revealWingRight {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) translate3d(150px, 0, 0) rotateY(-35deg) rotate(5deg);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
 /* 1. Deep Space Rise (Bay từ chiều sâu trục Z) */
 .reveal-deep-space {
   opacity: 0;
   transform: perspective(1200px) translate3d(0, 80px, -350px) rotateX(25deg);
   filter: blur(12px);
-  transition: 
-    opacity 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
-    transform 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
-    filter 1.2s cubic-bezier(0.25, 1.4, 0.5, 1);
-  transition-delay: var(--delay, 0s);
   will-change: transform, opacity, filter;
 }
 
 .reveal-deep-space.is-visible {
-  opacity: 1;
-  transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg);
-  filter: blur(0);
+  animation: revealDeepSpace 1.2s cubic-bezier(0.25, 1.4, 0.5, 1) both;
+  animation-delay: var(--delay, 0s);
 }
 
 /* 2. 3D Card Flip (Lật bài 3D) */
 .reveal-card-flip {
   opacity: 0;
   transform: perspective(1000px) scale(0.8) rotateY(-90deg);
-  transition: 
-    opacity 1.0s cubic-bezier(0.25, 1.4, 0.5, 1),
-    transform 1.0s cubic-bezier(0.25, 1.4, 0.5, 1);
-  transition-delay: var(--delay, 0s);
   will-change: transform, opacity;
 }
 
 .reveal-card-flip.is-visible {
-  opacity: 1;
-  transform: perspective(1000px) scale(1) rotateY(0deg);
+  animation: revealCardFlip 1.0s cubic-bezier(0.25, 1.4, 0.5, 1) both;
+  animation-delay: var(--delay, 0s);
 }
 
 /* 3. 3D Wing Slide (Khép cánh 3D từ hai phía) */
@@ -1217,18 +1262,12 @@
   opacity: 0;
   transform: perspective(1200px) translate3d(-150px, 0, 0) rotateY(35deg) rotate(-5deg);
   filter: blur(6px);
-  transition: 
-    opacity 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
-    transform 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
-    filter 1.2s cubic-bezier(0.25, 1.4, 0.5, 1);
-  transition-delay: var(--delay, 0s);
   will-change: transform, opacity, filter;
 }
 
 .reveal-wing-left.is-visible {
-  opacity: 1;
-  transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
-  filter: blur(0);
+  animation: revealWingLeft 1.2s cubic-bezier(0.25, 1.4, 0.5, 1) both;
+  animation-delay: var(--delay, 0s);
 }
 
 /* Cánh phải */
@@ -1236,18 +1275,12 @@
   opacity: 0;
   transform: perspective(1200px) translate3d(150px, 0, 0) rotateY(-35deg) rotate(5deg);
   filter: blur(6px);
-  transition: 
-    opacity 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
-    transform 1.2s cubic-bezier(0.25, 1.4, 0.5, 1),
-    filter 1.2s cubic-bezier(0.25, 1.4, 0.5, 1);
-  transition-delay: var(--delay, 0s);
   will-change: transform, opacity, filter;
 }
 
 .reveal-wing-right.is-visible {
-  opacity: 1;
-  transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg) rotate(0deg);
-  filter: blur(0);
+  animation: revealWingRight 1.2s cubic-bezier(0.25, 1.4, 0.5, 1) both;
+  animation-delay: var(--delay, 0s);
 }
 
 /* Ngoài màn hình thường, ẩn layout in đi */
