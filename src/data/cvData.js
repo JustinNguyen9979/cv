@@ -26,6 +26,10 @@ export const cvData = {
     {
       label: 'Facebook',
       url: 'https://www.facebook.com/NguyenNguyen77779999/',
+    },
+    {
+      label: 'Zalo',
+      url: 'https://zalo.me/0982579098',
     }
   ],
   stats: [
