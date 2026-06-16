@@ -166,6 +166,14 @@ export const cvData = {
       url: 'https://github.com/JustinNguyen9979/YTDown',
     },
     {
+      name: 'Packing Verification Tool',
+      type: 'Warehouse Operations Tool',
+      description:
+        'Ứng dụng desktop/terminal trên Windows hỗ trợ ghi lại quá trình đóng hàng bằng camera, tự động nhận diện QR code vận đơn, hiển thị mã vận đơn kèm ngày giờ đóng hàng trên màn hình camera, đếm số lượng đơn đã đóng trong ngày và cho phép tìm lại video đóng hàng theo mã vận đơn. Ứng dụng hoạt động hoàn toàn local, không đưa dữ liệu lên internet, giúp tăng tính minh bạch trong vận hành và hỗ trợ xử lý khiếu nại đơn hàng.',
+      stack: ['Python', 'OpenCV', 'QR Code Detection', 'Camera Recording', 'Local Storage', 'Windows Terminal'],
+      url: '#',
+    },
+    {
       name: 'Business Analytics',
       type: 'E-commerce Data Dashboard',
       description:
