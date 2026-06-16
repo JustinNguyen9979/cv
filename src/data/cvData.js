@@ -138,6 +138,8 @@ export const cvData = {
         'Phụ trách chụp hình sản phẩm thực tế, đăng tải sản phẩm, tối ưu tên sản phẩm, mô tả, giá bán và cách trình bày để tăng khả năng chuyển đổi.',
         'Quản lý người livestream, phối hợp nội dung bán hàng, theo dõi hiệu quả phiên live và cải thiện cách tư vấn sản phẩm.',
         'Tham gia vận hành tồn kho, đóng gói, xử lý đơn hàng, chăm sóc khách hàng và xử lý các tình huống bom hàng, hoàn hàng, khiếu nại.',
+        'Tự xây dựng công cụ ghi lại quá trình đóng hàng bằng Python, tự động nhận diện QR code vận đơn, lưu video theo mã vận đơn và hỗ trợ truy xuất bằng chứng khi phát sinh tranh chấp.',
+        'Ứng dụng công cụ ghi hình đóng hàng vào vận hành thực tế, giúp cung cấp bằng chứng rõ ràng và hỗ trợ xử lý thành công nhiều trường hợp khiếu nại/hoàn hàng.',
         'Tối ưu chi phí vận hành, phí sàn, giá bán và quy trình xử lý đơn, góp phần cải thiện tỷ suất lợi nhuận từ khoảng 16% lên 18%.',
       ],
     },
